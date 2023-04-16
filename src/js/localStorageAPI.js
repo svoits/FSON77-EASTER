@@ -6,7 +6,14 @@ function addNote(note) {
   localStorage.setItem(STORAGE_KEY, JSON.stringify(notes));
 }
 
-function getNotes(){
+function getNotes() {
   return JSON.parse(localStorage.getItem(STORAGE_KEY)) || [];
 }
-export default { addNote, getNotes };
+
+function removeNote(id) {
+  const notes = getNotes();
+  const updatedNotes = notes.filter(item => item.id !== id);
+  localStorage.setItem(STORAGE_KEY, JSON.stringify(updatedNotes));
+}
+
+export default { addNote, getNotes, removeNote };
