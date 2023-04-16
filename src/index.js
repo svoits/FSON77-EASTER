@@ -14,3 +14,7 @@
  * прибрати завдання зі списку.
  * Список із завданнями має бути доступним після перезавантаження сторінки.
  */
+import refs from './js/refs';
+import { onFormSubmit } from './js/onFormSubmit';
+
+refs.form.addEventListener('submit', onFormSubmit);
