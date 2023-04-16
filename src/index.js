@@ -17,5 +17,8 @@
 import refs from './js/refs';
 import { onFormSubmit } from './js/onFormSubmit';
 import { renderNotes } from './js/renderNotes';
+import { removeNote } from './js/removeNote';
+
 renderNotes();
 refs.form.addEventListener('submit', onFormSubmit);
+refs.taskList.addEventListener('click', removeNote);
